@@ -51,7 +51,7 @@ plugins=(zsh-syntax-highlighting git)
 export EDITOR=nano
 export VISUAL=nano
 
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH:~/bin:.
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/texbin:$PATH:~/bin:.
 export MANPATH=/usr/local/man:/usr/local/share/man:$MANPATH
 
 export LS_OPTIONS="--color=auto --group-directories-first -Fa"
