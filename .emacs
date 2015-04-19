@@ -12,12 +12,40 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (add-to-list 'custom-theme-load-path "~/Library/Preferences/Aquamacs Emacs/Packages")
 
-(load-theme 'solarized)
-(set-frame-parameter nil 'background-mode 'dark)
-(enable-theme 'solarized)
+;;(load-theme 'solarized)
+;;(set-frame-parameter nil 'background-mode 'dark)
+;;(enable-theme 'solarized)
 
 ;; Load things
 (load "mine-sweeper")
+(load "two-mode-mode")
+
+;; Turn on modes
+(add-hook 'text-mode-hook 'electric-pair-mode)
+(electric-pair-mode t)
+(global-linum-mode t)
+;;(turn-on-follow-mouse)
+
+;; LaTeX
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
+
+(setq TeX-PDF-mode t)
+
+;; Asymptote
+(add-to-list 'load-path "/usr/local/share/asymptote")
+(autoload 'asy-mode "asy-mode.el" "Asymptote major mode." t)
+(autoload 'lasy-mode "asy-mode.el" "hybrid Asymptote/Latex major mode." t)
+(autoload 'asy-insinuate-latex "asy-mode.el" "Asymptote insinuate LaTeX." t)
+(add-to-list 'auto-mode-alist '("\\.asy$" . asy-mode))
 
 ;; Variables
 (setq temporary-file-directory "~/tmp/emacs")
@@ -32,10 +60,6 @@
 ;; Hooks
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
-;; Font
-(add-to-list 'default-frame-alist '(font . "Inconsolata" ))
-(set-face-attribute 'default t :font "Inconsolata" )
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -48,10 +72,10 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (solarized-dark)))
+ ;'(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a71be4e5e9e418025daea651f8a1628953abb7af505da5e556e95061b6a6e389" default)))
+    ("1297a022df4228b81bc0436230f211bad168a117282c20ddcba2db8c6a200743" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a71be4e5e9e418025daea651f8a1628953abb7af505da5e556e95061b6a6e389" default)))
  '(fci-rule-color "#073642")
  '(frame-background-mode (quote dark))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
