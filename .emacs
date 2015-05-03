@@ -61,17 +61,15 @@
 (autoload 'asy-insinuate-latex "asy-mode.el" "Asymptote insinuate LaTeX." t)
 (add-to-list 'auto-mode-alist '("\\.asy$" . asy-mode))
 
-;; Variables
-(setq temporary-file-directory "~/tmp/emacs")
-(setq TeX-PDF-mode t)
+;; Lisp
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
 
 ;; Save backup and autosave files to temporary-file-directory, not the current directory
+(setq temporary-file-directory "~/tmp/emacs")
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-(setq frame-background-mode (quote automatic))
-
-;; Hooks
+;; doc-view-mode
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 (setq doc-view-continuous t)
 
