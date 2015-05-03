@@ -7,6 +7,10 @@
 
 (add-to-list 'load-path "~/.emacs.d/pkg")
 
+;; Load things
+(load "mine-sweeper")
+(load "two-mode-mode")
+
 ;; Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'monokai t)
@@ -15,9 +19,15 @@
 (set-face-attribute 'default nil :font "Inconsolata" :height 140)
 (set-face-attribute 'variable-pitch nil :font "Helvetica Neue" :height 140)
 
-;; Load things
-(load "mine-sweeper")
-(load "two-mode-mode")
+;; Cursor
+(set-default 'cursor-type 'bar)
+(setq blink-cursor-blinks 0)
+
+;; Indentation
+(setq-default indent-tabs-mode nil)
+(setq tab-width 4)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'tab-width)
 
 ;; Turn on modes
 (add-hook 'text-mode-hook 'electric-pair-mode)
