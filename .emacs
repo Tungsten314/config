@@ -9,12 +9,11 @@
 
 ;; Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
-(add-to-list 'custom-theme-load-path "~/Library/Preferences/Aquamacs Emacs/Packages")
+(load-theme 'monokai t)
 
-;;(load-theme 'solarized)
-;;(set-frame-parameter nil 'background-mode 'dark)
-;;(enable-theme 'solarized)
+;; Fonts
+(set-face-attribute 'default nil :font "Inconsolata" :height 140)
+(set-face-attribute 'variable-pitch nil :font "Helvetica Neue" :height 140)
 
 ;; Load things
 (load "mine-sweeper")
