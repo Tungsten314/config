@@ -31,9 +31,14 @@
 
 ;; Turn on modes
 (add-hook 'text-mode-hook 'electric-pair-mode)
-(electric-pair-mode t)
 (global-linum-mode t)
-;;(turn-on-follow-mouse)
+
+;; Parentheses
+(electric-pair-mode t)
+(show-paren-mode t)
+(setq show-paren-delay 0)
+(set-face-attribute 'show-paren-match-face nil :background "#66d9ef" :foreground "#272822" :underline t)
+(set-face-attribute 'show-paren-mismatch-face nil :background "#f92672" :foreground "#272822" :box t)
 
 ;; LaTeX
 (setq TeX-auto-save t)
