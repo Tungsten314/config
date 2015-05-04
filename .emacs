@@ -32,6 +32,7 @@
 ;; Turn on modes
 (add-hook 'text-mode-hook 'electric-pair-mode)
 (global-linum-mode t)
+(delete-selection-mode t)
 
 ;; Parentheses
 (electric-pair-mode t)
