@@ -16,8 +16,12 @@
 (load-theme 'monokai t)
 
 ;; Fonts
-(set-face-attribute 'default nil :font "Inconsolata" :height 140)
-(set-face-attribute 'variable-pitch nil :font "Helvetica Neue" :height 140)
+(set-face-attribute 'default nil
+                    :font "Inconsolata"
+                    :height 140)
+(set-face-attribute 'variable-pitch nil
+                    :font "Helvetica Neue"
+                    :height 140)
 
 ;; Cursor
 (set-default 'cursor-type 'bar)
@@ -33,13 +37,21 @@
 (add-hook 'text-mode-hook 'electric-pair-mode)
 (global-linum-mode t)
 (delete-selection-mode t)
+(hl-line-mode t)
 
 ;; Parentheses
 (electric-pair-mode t)
 (show-paren-mode t)
 (setq show-paren-delay 0)
-(set-face-attribute 'show-paren-match-face nil :background "#66d9ef" :foreground "#272822" :underline t)
-(set-face-attribute 'show-paren-mismatch-face nil :background "#f92672" :foreground "#272822" :box t)
+(set-face-attribute 'show-paren-match-face nil
+                    :foreground "#66d9ef"
+                    :background nil
+                    :inverse-video nil
+                    :underline t)
+(set-face-attribute 'show-paren-mismatch-face nil
+                    :foreground "#f8f8f2"
+                    :background "#f92672"
+                    :inverse-video nil)
 
 ;; LaTeX
 (setq TeX-auto-save t)
