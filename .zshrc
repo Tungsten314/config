@@ -48,7 +48,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(zsh-syntax-highlighting git)
 
 # User configuration
-fortune # I want to know my fortune!
+fortune | cowsay -n # Cows make good oracles.
 
 export EDITOR=nano
 export VISUAL=nano
