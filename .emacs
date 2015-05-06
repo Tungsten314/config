@@ -35,9 +35,12 @@
 
 ;; Turn on modes
 (add-hook 'text-mode-hook 'electric-pair-mode)
-(global-linum-mode t)
 (delete-selection-mode t)
 (hl-line-mode t)
+
+;; Line/column numbers
+(global-linum-mode t)
+(column-number-mode t)
 
 ;; Parentheses
 (electric-pair-mode t)
