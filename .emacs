@@ -37,9 +37,10 @@
 (add-hook 'text-mode-hook 'electric-pair-mode)
 (delete-selection-mode t)
 (global-hl-line-mode t)
+(require 'zone) (zone-when-idle 120)
 
 ;; Window size
-(setq default-frame-alist (quote ((fullscreen . maximized))))
+(setq default-frame-alist '((fullscreen . maximized)))
 
 ;; Line/column numbers
 (global-linum-mode t)
