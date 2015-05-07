@@ -36,7 +36,7 @@
 ;; Turn on modes
 (add-hook 'text-mode-hook 'electric-pair-mode)
 (delete-selection-mode t)
-(hl-line-mode t)
+(global-hl-line-mode t)
 
 ;; Window size
 (setq default-frame-alist (quote ((fullscreen . maximized))))
