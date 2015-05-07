@@ -38,6 +38,9 @@
 (delete-selection-mode t)
 (hl-line-mode t)
 
+;; Window size
+(setq default-frame-alist (quote ((fullscreen . maximized))))
+
 ;; Line/column numbers
 (global-linum-mode t)
 (column-number-mode t)
