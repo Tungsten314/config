@@ -38,6 +38,7 @@
 (delete-selection-mode t)
 (global-hl-line-mode t)
 (require 'zone) (zone-when-idle 120)
+(tool-bar-mode nil)
 
 ;; Window size
 (setq default-frame-alist '((fullscreen . maximized)))
