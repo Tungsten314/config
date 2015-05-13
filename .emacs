@@ -37,7 +37,7 @@
 (add-hook 'text-mode-hook 'electric-pair-mode)
 (delete-selection-mode t)
 (global-hl-line-mode t)
-(require 'zone) (zone-when-idle 120)
+(require 'zone) (zone-when-idle 180)
 (tool-bar-mode nil)
 
 ;; Window size
