@@ -32,8 +32,10 @@
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 
+;; $PATH
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 ;; Turn on modes
-(add-hook 'text-mode-hook 'electric-pair-mode)
 (delete-selection-mode t)
 (global-hl-line-mode t)
 (require 'zone) (zone-when-idle 180)
@@ -59,13 +61,17 @@
                     :background "#dc322f"
                     :inverse-video nil)
 
+;; Spellchecking
+(setq-default ispell-program-name "/usr/local/bin/aspell")
+(setq ispell-dictionary "en_CA")
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+
 ;; LaTeX
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
