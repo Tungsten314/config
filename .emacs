@@ -1,7 +1,7 @@
 ;; Packages
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives '("marmlade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/pkg")
@@ -31,6 +31,7 @@
 (setq tab-width 4)
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
+(defvaralias 'python-indent 'tab-width)
 
 ;; $PATH
 (setq exec-path (append exec-path '("/usr/local/bin")))
