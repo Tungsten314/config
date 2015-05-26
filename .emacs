@@ -74,6 +74,9 @@
 
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook (lambda ()
+                             (add-to-list ‘write-file-functions
+                                           ‘delete-trailing-whitespace)))
 
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
