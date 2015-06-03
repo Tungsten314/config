@@ -26,6 +26,10 @@
 (set-default 'cursor-type 'bar)
 (setq blink-cursor-blinks 0)
 
+;; Scrolling
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 4))) ;; one line at a time
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
 ;; Indentation
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
@@ -35,6 +39,10 @@
 
 ;; $PATH
 (setq exec-path (append exec-path '("/usr/local/bin")))
+(setenv "PATH"
+         (concat
+          "/usr/texbin" ":"
+          (getenv "PATH")))
 
 ;; Turn on modes
 (delete-selection-mode t)
@@ -75,13 +83,38 @@
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook (lambda ()
-                             (add-to-list ‘write-file-functions
-                                           ‘delete-trailing-whitespace)))
+                             (add-to-list 'write-file-functions
+                                          'delete-trailing-whitespace)))
 
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
 
 (setq TeX-PDF-mode t)
+
+;; Change keybindings for (La)TeX fonts
+(defun tex-bold ()
+  (interactive)
+  (TeX-font nil ?\C-b))
+
+(defun tex-italic ()
+  (interactive)
+  (TeX-font nil ?\C-e))
+
+(defun tex-smallcaps ()
+  (interactive)
+  (TeX-font nil ?\C-c))
+
+(defun tex-typewriter ()
+  (interactive)
+  (TeX-font nil ?\C-t))
+
+(defun tex-bindings-hook ()
+  (local-set-key "\C-cb" 'tex-bold)
+  (local-set-key "\C-ci" 'tex-italic)
+  (local-set-key "\C-cs" 'tex-smallcaps)
+  (local-set-key "\C-ct" 'tex-typewriter))
+
+(add-hook 'LaTeX-mode-hook 'tex-bindings-hook)
 
 ;; Asymptote
 (add-to-list 'load-path "/usr/local/share/asymptote")
@@ -101,4 +134,3 @@
 ;; doc-view-mode
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 (setq doc-view-continuous t)
-
