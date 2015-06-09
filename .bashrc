@@ -1,6 +1,6 @@
 export EDITOR=nano
 export PATH="$(/usr/local/bin/brew --prefix coreutils)"/libexec/gnubin:/usr/local/bin:$PATH:~/bin:.
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\] $ "
+export PS1="\[\033[36m\]\u\[\033[m\]: \[\033[33;1m\]\w\[\033[m\] $ "
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 alias ls="ls -GFh1a"
