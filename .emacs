@@ -33,9 +33,9 @@
 ;; Indentation
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
-(defvaralias 'c-basic-offset 'tab-width)
-(defvaralias 'cperl-indent-level 'tab-width)
-(defvaralias 'python-indent 'tab-width)
+(setq c-basic-offset tab-width)
+(setq cperl-indent-level tab-width)
+(setq python-indent tab-width)
 
 ;; $PATH
 (setq exec-path (append exec-path '("/usr/local/bin")))
