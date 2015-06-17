@@ -14,3 +14,34 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias gulp="npm-exec gulp"
 alias rm="rm -i"
 alias df="df -h"
+
+search() {
+    IFS='+'
+    query="$*"
+    # Substitute illegal characters
+    query=${query//'$'/'%24'}
+    query=${query//'&'/'%26'}
+    query=${query//'+'/'%2B'}
+    query=${query//','/'%2C'}
+    query=${query//'/'/'%2F'}
+    query=${query//':'/'%3A'}
+    query=${query//';'/'%3B'}
+    query=${query//'='/'%3D'}
+    query=${query//'?'/'%3F'}
+    query=${query//'@'/'%40'}
+    query=${query//':'/'%3A'}
+    query=${query//'"'/'%22'}
+    query=${query//'<'/'%3C'}
+    query=${query//'>'/'%3E'}
+    query=${query//'#'/'%23'}
+    query=${query//'%'/'%25'}
+    query=${query//'{'/'%7B'}; query=${query//'}'/'%7D'}
+    query=${query//'|'/'%7C'}
+    query=${query//'\'/'%5C'}
+    query=${query//'^'/'%5E'}
+    query=${query//'~'/'%7E'}
+    query=${query//'['/'%5B'}; query=${query//']'/'%5D'}
+    query=${query//'`'/'%60'}
+    
+    open -b org.mozilla.FirefoxDeveloperEdition "https://duckduckgo.com/?q=$*"
+}
