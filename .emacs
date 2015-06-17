@@ -47,7 +47,6 @@
 ;; Turn on modes
 (delete-selection-mode t)
 (global-hl-line-mode t)
-(require 'zone) (zone-when-idle 180)
 (tool-bar-mode -1)
 
 ;; Window size
@@ -81,6 +80,7 @@
 
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'auto-fill-mode)
 (add-hook 'LaTeX-mode-hook (lambda ()
                              (add-to-list 'write-file-functions
                                           'delete-trailing-whitespace)))
