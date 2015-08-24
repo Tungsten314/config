@@ -57,6 +57,9 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/texbin:$
 export MANPATH=/usr/local/man:/usr/local/share/man:$MANPATH
 
 export LS_OPTIONS="--color=auto --group-directories-first -Fa"
+
+export LESSHISTFILE="-" # Disable creation of ~/.lesshst
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 eval `dircolors ~/.dir_colors`
