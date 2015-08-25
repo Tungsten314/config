@@ -50,6 +50,7 @@ plugins=(zsh-syntax-highlighting git)
 # User configuration
 fortune | cowsay -n # Cows make good oracles.
 
+# Prefer nano when editing files
 export EDITOR=nano
 export VISUAL=nano
 
@@ -57,10 +58,13 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/texbin:$
 export MANPATH=/usr/local/man:/usr/local/share/man:$MANPATH
 
 export LS_OPTIONS="--color=auto --group-directories-first -Fa"
-
-export LESSHISTFILE="-" # Disable creation of ~/.lesshst
-
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+export PYTHONSTARTUP="/Users/wec/.pyrc" # A .rc file for Python
+
+# Save history files in ~/.history
+export LESSHISTFILE="~/.history/.lesshst"
+export HISTFILE="~/.history/.zsh_history"
 
 eval `dircolors ~/.dir_colors`
 
