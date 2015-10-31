@@ -16,6 +16,9 @@
 
 (setq TeX-PDF-mode t)
 
+;; Softwrap
+(add-hook 'LaTeX-mode-hook (lambda () (setq truncate-lines nil)))
+
 ;; Key bindings
 (defun tex-bold ()
   (interactive)

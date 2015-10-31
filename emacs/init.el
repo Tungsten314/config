@@ -15,7 +15,7 @@
 (ac-config-default)
 
 ;; $PATH
-(setq exec-path (append exec-path '("/usr/local/bin")))
+(setq exec-path (append exec-path '("/usr/local/bin" "/usr/texbin")))
 (setenv "PATH"
          (concat
           "/usr/texbin" ":" "/usr/local/bin" ":"

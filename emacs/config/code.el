@@ -1,10 +1,14 @@
 ;;; ~/.emacs.d/config/code.el: settings for programming
+
 ;; Indentation
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
 (setq c-basic-offset tab-width)
 (setq cperl-indent-level tab-width)
 (setq python-indent tab-width)
+
+;; Don't softwrap
+(set-default 'truncate-lines t)
 
 ;; Python
 (setq python-shell-interpreter "python3")
