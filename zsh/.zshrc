@@ -2,9 +2,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="wec"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -43,17 +40,13 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-syntax-highlighting git)
 
 # User configuration
-
 export EDITOR=nano
 export VISUAL=nano
 
-export 
-PATH=/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/texbin:$PATH:~/prog/bin:.
+export PATH=/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/texbin:$PATH:~/prog/bin:.
 export MANPATH=/usr/local/man:/usr/local/share/man:$MANPATH
 
 export LS_OPTIONS="--color=auto --group-directories-first -Fa"
