@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.config/dotfiles/zsh/custom
 
 # Set name of the theme to load.
 ZSH_THEME="wec"
@@ -35,9 +36,6 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(zsh-syntax-highlighting git)
@@ -46,14 +44,18 @@ plugins=(zsh-syntax-highlighting git)
 export EDITOR=nano
 export VISUAL=nano
 
-export PATH=/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/texbin:$PATH:~/prog/bin:.
+typeset -U path
+path=(
+    /Library/Frameworks/Python.famework/Versions/3.5/bin
+    /usr/local/op/coreutils/libexec/gnubin
+    /usr/local/apache2/bin
+    /usr/texbin
+    $HOME/prog/bin
+    $path
+)
 export MANPATH=/usr/local/man:/usr/local/share/man:$MANPATH
 
-export LS_OPTIONS="--color=auto --group-directories-first -Fa"
-
 export LESSHISTFILE="-" # Disable creation of ~/.lesshst
-
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 eval `dircolors ~/.dir_colors`
 
