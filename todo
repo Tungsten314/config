@@ -1,0 +1,24 @@
+export TODO_DIR="/home/wec/.todo"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
+export REPORT_FILE="$TODO_DIR/report.txt"
+
+export RED='\033[31m'
+export ORANGE='\033[31;1m'
+export GREEN='\033[32m'
+export YELLOW='\033[33m'
+export BLUE='\033[34m'
+export MAGENTA='\033[35m'
+export VIOLET='\033[35;1m'
+export CYAN='\033[36m'
+export DEFAULT='\033[0m'
+export WHITE='\033[37;1m'
+export RESET='\033[0m'
+
+export PRI_A=T$RED
+export PRI_B=$ORANGE
+export PRI_C=$YELLOW
+export PRI_D=$GREEN
+
+export COLOR_PROJECT=$BLUE
+export COLOR_CONTEXT=$VIOLET
