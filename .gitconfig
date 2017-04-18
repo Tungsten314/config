@@ -1,5 +1,5 @@
 [alias]
-	graph = ! git log --graph --abbrev --decorate --color=always --relative-date --format=format:'%C(bold green)%d%C(reset) %C(white)%s%C(reset) - %C(cyan)%an%C(reset) %C(yellow)(%ad)%C(reset)%n' --branches --tags --remotes | less -r
+	graph = ! git log --graph --abbrev --decorate --color=always --relative-date --format=format:'%C(green)%d%C(reset) %C(white)%s%C(reset) - %C(cyan)%an%C(reset) %C(yellow)(%ad)%C(reset)%n' --branches --tags --remotes | less -r
 [color]
 	ui = true
 [core]
