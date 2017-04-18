@@ -15,7 +15,7 @@ export DEFAULT='\033[0m'
 export WHITE='\033[37;1m'
 export RESET='\033[0m'
 
-export PRI_A=T$RED
+export PRI_A=$RED
 export PRI_B=$ORANGE
 export PRI_C=$YELLOW
 export PRI_D=$GREEN
