@@ -16,3 +16,5 @@
 	name = wecassidy
 [ghi "highlight"]
 	style = colorful
+[magit]
+	hideCampaign = true
