@@ -18,3 +18,5 @@
 	style = colorful
 [magit]
 	hideCampaign = true
+[tar "tar.xz"]
+	command = xz -c
